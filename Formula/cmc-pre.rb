@@ -5,21 +5,21 @@
 class CmcPre < Formula
   desc "CMC PRE-RELEASES - A command line tool to help you write Conventional Commits"
   homepage "https://github.com/marcdonald/cmc-cli"
-  version "0.0.1-alpha8"
+  version "0.0.1-alpha9"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha8/cmc_Darwin_x86_64.tar.gz"
-      sha256 "4ad2a2bf90007c3f71674a79dc2ff0fa3ab592ee1253fc078144c06f3b689434"
+      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha9/cmc_Darwin_x86_64.tar.gz"
+      sha256 "97dc0c0fc35a6cf5b9a22461747882fbb8b311f19015150aa4067c422a3d66f7"
 
       def install
         bin.install "cmc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha8/cmc_Darwin_arm64.tar.gz"
-      sha256 "a5fafdc39d488ac8e609dcbcbc477189b0cb825421b2e5b70a2d00f235c9340a"
+      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha9/cmc_Darwin_arm64.tar.gz"
+      sha256 "9f852d624a3d985ec425dae869d32de0387ce8e89577649fe7ec7962953bbfd2"
 
       def install
         bin.install "cmc"
@@ -28,17 +28,17 @@ class CmcPre < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha8/cmc_Linux_x86_64.tar.gz"
-      sha256 "d5bc2df91c398d9505ca7f088a7a86d604d7e0f61513222260b04467d95c23c3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha9/cmc_Linux_arm64.tar.gz"
+      sha256 "9b6b77ca5331647a3cc98ba2c9a7a24398cef4ff0a885c155d436fc5f8cdab75"
 
       def install
         bin.install "cmc"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha8/cmc_Linux_arm64.tar.gz"
-      sha256 "ee3231a2666024f4cb4222da070a49a824b1fd23bbca9b64ecbb491b5ff24923"
+    if Hardware::CPU.intel?
+      url "https://github.com/MarcDonald/cmc-cli/releases/download/0.0.1-alpha9/cmc_Linux_x86_64.tar.gz"
+      sha256 "a6dfd2fd02e88a66f4d943669bcccc7bc049d955b05e0a74439f5e82ce18adc9"
 
       def install
         bin.install "cmc"
