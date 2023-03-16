@@ -5,21 +5,21 @@
 class CmmiterPre < Formula
   desc "CMMITER PRE-RELEASES - A command line tool to help you write Conventional Commits"
   homepage "https://github.com/marcdonald/cmmiter"
-  version "0.0.1-alpha12"
+  version "0.0.1-alpha13"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha12/cmmiter_Darwin_x86_64.tar.gz"
-      sha256 "a56c1c26046e3da1cb37850cdad378a1c9a898c28ad4a5c9ceecc5d244ecf433"
+    if Hardware::CPU.arm?
+      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha13/cmmiter_Darwin_arm64.tar.gz"
+      sha256 "4df2368e926414cc62998320378131cb31b257c8f2f35de99bc25663dc940f63"
 
       def install
         bin.install "cmt"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha12/cmmiter_Darwin_arm64.tar.gz"
-      sha256 "8d65582565c446542dee7d009151356fd0c993e09ec05f178cee78aceda5a9c6"
+    if Hardware::CPU.intel?
+      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha13/cmmiter_Darwin_x86_64.tar.gz"
+      sha256 "91d7d6a320f606a3e0fa32e8ba5db0088a811365a14fc45dbe0dd8050551b89f"
 
       def install
         bin.install "cmt"
@@ -29,16 +29,16 @@ class CmmiterPre < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha12/cmmiter_Linux_arm64.tar.gz"
-      sha256 "ece706318e95ae7648efd2b1ccfaef67cc409f05bda263fdda838e3d9c2f104d"
+      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha13/cmmiter_Linux_arm64.tar.gz"
+      sha256 "4dd9bc0735918d9389dc88e761aa74bb5ffbf14ff0e347aa19475cd408bb9624"
 
       def install
         bin.install "cmt"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha12/cmmiter_Linux_x86_64.tar.gz"
-      sha256 "c4585f2741bcd553e3faec196a9afe47f683969b08f387b5aba4d24a061c4d91"
+      url "https://github.com/MarcDonald/cmmiter/releases/download/0.0.1-alpha13/cmmiter_Linux_x86_64.tar.gz"
+      sha256 "5946ac24a942b972879fa2e605b5ed40af3eedc69cd5cebc41676808438832c2"
 
       def install
         bin.install "cmt"
